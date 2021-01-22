@@ -2,7 +2,7 @@ ROM := pokegold-spaceworld.gb
 CORRECTEDROM := $(ROM:%.gb=%-correctheader.gb)
 BASEROM := baserom.gb
 
-DIRS := home engine data gfx audio maps scripts ram slack
+DIRS := home engine data gfx audio maps scripts ram slack en
 FILES :=
 
 BUILD := build
@@ -42,7 +42,7 @@ tools/gfx :=
 .SECONDEXPANSION:
 
 .PHONY: all
-all: $(ROM) $(CORRECTEDROM) compare
+all: $(ROM) $(CORRECTEDROM)
 
 .PHONY: compare
 compare: $(ROM) $(CORRECTEDROM)
