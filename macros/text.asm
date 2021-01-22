@@ -123,9 +123,11 @@ cry_pidgeot: macro
 	db TX_CRY_15
 endm
 
-	const TX_CRY_16 ; $16
-cry_dewgong: macro
-	db TX_CRY_16
+	const TX_FAR ; $16
+text_far: macro
+	db TX_FAR
+	dw \1
+	db BANK(\1)
 endm
 
 	const_next $50

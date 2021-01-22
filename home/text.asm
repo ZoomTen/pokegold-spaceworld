@@ -284,7 +284,7 @@ TMCharText::      db "わざマシン@"
 TrainerCharText:: db "トレーナー@"
 PCCharText::      db "パソコン@"
 RocketCharText::  db "ロケットだん@"
-POKeCharText::    db "ポケモン@"
+POKeCharText::    db "POKé@"
 SixDotsCharText:: db "⋯⋯@"
 EnemyText::       db "てきの　@"
 GaCharacterTExt:: db "が　@"
@@ -665,7 +665,7 @@ Text_PlaySound::
 	dbw TX_SOUND_13, SFX_POKEDEX_REGISTRATION
 	dbw TX_CRY_14,   MON_NIDORINA
 	dbw TX_CRY_15,   MON_PIDGEOT
-	dbw TX_CRY_16,   MON_DEWGONG
+	dbw TX_CRY_15,   MON_DEWGONG
 
 Text_TX_DOTS:
 	pop hl
@@ -723,4 +723,34 @@ TextCommands::
 	dw Text_PlaySound
 	dw Text_PlaySound
 	dw Text_PlaySound
-	dw Text_PlaySound
+	dw Text_FAR
+
+
+SECTION "home/text.asm@Text_FAR", ROM0
+
+Text_FAR::
+; write text from a different bank (little endian)
+	pop hl
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	inc hl
+	ldh a, [hROMBank]
+	push af
+	ld a, [hli]
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+
+	push hl
+	inc de
+	ld h, b
+	ld l, c
+	call PlaceString
+
+	pop hl
+	pop af
+
+	ldh [hROMBank], a
+	ld [MBC3RomBank], a
+
+	jp NextTextCommand
