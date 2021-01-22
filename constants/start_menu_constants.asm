@@ -8,3 +8,4 @@
 	const START_EXIT ; 6
 	const START_SET_FRAME ; 7
 	const START_RESET ; 8
+	const START_TRAINERGEAR

@@ -144,117 +144,157 @@ PlayerHouse2FN64Text:
 	ret
 
 PlayerHouse2FTextString1:
-	text "ケン『おっ　おまえの　うでで"
-	line "ひかりかがやく　そのとけいは⋯⋯"
-	cont "<PLAYER>も　ついに"
-	cont "トレーナーギアを　かったのか！"
+	text "KEN: Oh! That"
+	line "shiny thing on"
+	cont "your wrist…"
 
-	para "すごいじゃないか！"
-	line "でも　かったばかりじゃ　じかんしか"
-	cont "わからないだろ？"
-	cont "あとで　マップが"
-	cont "みられるように　してやるよ！"
-	cont "おまえ　どうせ"
-	cont "あそびに　いくんだろう？"
+	para "You finally bought"
+	line "a TRAINER GEAR!"
 
-	para "ざんねんながら　おふくろは"
-	line "かいものに　いってるから"
-	cont "おこづかいを　もらおうなんて"
-	cont "きょうは　むり　だぜ！"
+	para "Sweet! But since"
+	line "it's new and all,"
+	cont "you can't do much"
+	cont "more than check"
+	cont "the time, can you?"
+
+	para "I'll enable the"
+	line "map for ya later!"
+
+	para "You're going out"
+	line "anyway, right?"
+
+	para "MOM's out shopping,"
+	line "so if you were"
+	cont "hoping to ask for"
+	cont "some spending"
+	cont "money, that's"
+	cont "too bad!"
 	done
 
 PlayerHouse2FTextString2:
-	text "そうだ　おまえの　パソコンに"
-	line "メールが　とどいていたな"
-	cont "でかけるんなら"
-	cont "メールぐらい　よんでおけよ"
+	text "Oh yeah, I saw you"
+	line "got a new e-mail"
+	cont "in your PC."
+
+	para "At least check"
+	line "that before you"
+	cont "leave, huh?"
 	done
 
 PlayerHouse2FTextString3:
-	text "クりスマスに　カントーの"
-	line "しんせきに　プレゼント"
-	cont "してもらった　にんぎょうだ"
+	text "It's a doll you got"
+	line "as a Christmas"
+	cont "present from a"
+	cont "relative in KANTO."
 	done
 
 PlayerHouse2FTextString4:
-	text "ニンテンドウ６４を　してる！"
-	cont "⋯⋯　⋯⋯　さてと！"
-	cont "そろそろ　そとに　あそびに"
-	cont "でかけるか！"
+	text "<PLAYER> is playing"
+	line "the NINTENDO 64!"
+	para "…Alright! Time to"
+	line "get going!"
 	done
 
 PlayerHouse2FTextString5:
-	text "<PLAYER>は"
-	line "パソコンの　スイッチを　いれた！"
+	text "<PLAYER> turned on"
+	line "the PC."
 
-	para "おや？　<PLAYER>あてに"
-	line "メールが　とどいている　ようだ"
-	cont "よんでみる？@"
+	para "…What's this?"
+	line "There seems to be a"
+	cont "new e-mail."
 
-	db $08
+	para "Read it?@"
 
+	start_asm
 	call PlayerHouse2FCheckEmail
 	call Function3036
 	ret
 
 PlayerHouse2FTextString6:
-	text "とつぜん　メールを　さしあげる"
-	line "しつれいを　おゆるしあれ"
+	text "I hope you'll excuse"
+	line "the sudden e-mail,"
+	cont "but there's"
+	cont "something that I"
+	cont "would like to"
+	cont "entrust you with."
 
-	para "じつは　きみに　どうしても"
-	line "わたしたい　ものが　あるのじゃが"
-	cont "うけとって　もらえんかのう"
-	cont "ポケモンけんきゅうしゃ　オーキド"
+	para "Won't you come by"
+	line "and collect it?"
+
+	para "#MON researcher"
+	line "OAK"
 	done
 
 PlayerHouse2FTextString7:
-	text "あとで"
-	line "よもっと<⋯⋯>"
+	text "Maybe I'll read"
+	line "this later."
 	done
 
 PlayerHouse2FTextString8: ; (unused?)
-	text "しんはつばい　トレーナーギア！"
-	line "ポケモントレーナーの　ための"
-	cont "さいせんたんの　とけい　です"
+	text "Introducing: the"
+	line "TRAINER GEAR! The"
+	cont "cutting-edge watch"
+	cont "for #MON"
+	cont "trainers!"
 
-	para "じかんが　わかるのは　あたりまえ"
-	line "カセットを　ついかすれば"
-	cont "ばしょも　わかる！　"
-	cont "でんわが　かけられる！"
+	para "Of course you can"
+	line "use it to tell the"
+	cont "time, but, with a"
+	cont "certain cartridge,"
+	cont "you can even tell"
+	cont "where you are on a"
+	cont "map! You can also"
+	cont "call people!"
 
-	para "とどめは"
-	line "ラジオを　きくことができる！"
+	para "And that's not all!"
+	line "It even lets you"
+	cont "listen to the radio!"
 
-	para "もうしこみさきは⋯⋯"
-	line "⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯"
-	cont "シルフの　ホームぺージだ"
+	para "Order your TRAINER"
+	line "GEAR today! Go to…"
+
+	para "… … …"
+
+	para "…It's SILPH CO.'s"
+	line "home page."
 	done
 
 PlayerHouse2FTextString9:
-	text "<PLAYER>は"
-	line "ラジオのスイッチを　おした！"
+	text "<PLAYER> turned on"
+	line "the radio."
 
-	para "ジェイ　オー　ピー　エム"
-	line "こちらは"
-	cont "#　ほうそうきょく　です"
+	para "… … …"
 
-	para "#ニュースを　おおくりします"
-	line "<⋯⋯>　#の　せかいてきな"
-	cont "けんきゅうしゃ　オーキドはかせが"
-	cont "カントー　から"
-	cont "すがたを　けしました"
-	cont "あらたな　けんきゅうの　ばしょを"
-	cont "もとめて　いどうした　との"
-	cont "みかたも　ありますが"
-	cont "なんらかの　じけんに　まきこまれた"
-	cont "かのうせいも　あり"
-	cont "かんけいしゃは　とても"
-	cont "しんぱい　しています"
+	para "You're listening"
+	line "to JOPM, the"
+	cont "#MON broadcast"
+	cont "station!"
 
-	para "<⋯⋯><⋯⋯>いじょう"
-	line "#ニュースでした"
+	para "Now, in #MON"
+	line "news…"
 
-	para "<⋯⋯><⋯⋯><⋯⋯><⋯⋯><⋯⋯><⋯⋯>"
-	line "それでは　ひきつづき"
-	cont "おんがくを　おたのしみ　ください"
+	para "World-famous"
+	line "#MON researcher"
+	cont "PROF. OAK has"
+	cont "disappeared from"
+	cont "KANTO."
+
+	para "Some say he may"
+	line "have moved in"
+	cont "search of a new"
+	cont "place of study,"
+	cont "however others"
+	cont "fear he was"
+	cont "involved in some"
+	cont "kind of incident."
+
+	para "Concerned parties"
+	line "are very worried."
+
+	para "… … And that"
+	line "was #MON News."
+
+	para "We now return you"
+	line "to our regular"
+	cont "program."
 	done

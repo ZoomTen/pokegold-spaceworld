@@ -132,9 +132,7 @@ ROMX $02
 	"gfx.asm@Title Screen BG Decoration Border"
 	"engine/dumps/bank02.asm@Function928b"
 	"gfx.asm@SGB GFX"
-	"slack.asm@Unknownaebc"
-	"slack.asm@Corrupted SGB GFX"
-	"slack.asm@Unknownbb43"
+	"engine/trainer_gear.asm@TrainerGear_RadioTextNew"
 
 ROMX $03
 	org $4000

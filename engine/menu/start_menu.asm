@@ -64,7 +64,7 @@ DisplayStartMenu:
 
 .StartMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords $0C, 00, $13, $11
+	menu_coords $0A, 00, $13, $11
 	dw .MenuData
 	db 1 ; default option
 
@@ -76,15 +76,16 @@ DisplayStartMenu:
 	dw .Strings
 
 .Strings:
-	db "ずかん@"
-	db "ポケモン@"
-	db "りュック@"
+	db "#DEX@"
+	db "#MON@"
+	db "PACK@"
 	db "<PLAYER>@"
-	db "レポート@"
-	db "せってい@"
-	db "とじる@"
-	db "わくせん@"
-	db "りセット@"
+	db "SAVE@"
+	db "OPTION@"
+	db "EXIT@"
+	db "FRAME@"
+	db "RESET@"
+	db "GEAR@"
 
 StartMenuJumpTable:
 	dw StartMenu_Pokedex
@@ -96,6 +97,7 @@ StartMenuJumpTable:
 	dw StartMenu_Exit
 	dw StartMenu_SetFrame
 	dw StartMenu_Reset
+	dw StartMenu_TrainerGear
 
 StartMenuItems:
 	db 4
@@ -127,16 +129,18 @@ StartMenuItems:
 	db START_PARTY
 	db START_BACKPACK
 	db START_TRAINERCARD
+	db START_TRAINERGEAR
 	db START_SAVE
 	db START_OPTIONS
 	db START_EXIT
 	db -1
 
-	db 6
+	db 7
 	db START_POKEDEX
 	db START_PARTY
 	db START_BACKPACK
 	db START_TRAINERCARD
+	db START_TRAINERGEAR
 	db START_OPTIONS
 	db START_EXIT
 	db -1
@@ -176,6 +180,28 @@ StartMenu_Exit:
 StartMenu_SetFrame:
 	callab FrameTypeDialog
 	ld a, 0
+	ret
+
+StartMenu_TrainerGear:
+	call .Do
+	ld a, 0
+	ret
+.Do:
+	call LoadStandardMenuHeader
+	ldh a, [hMapAnims]
+	push af
+	xor a
+	ldh [hMapAnims], a
+	callab OpenTrainerGear
+	call ClearPalettes
+	call LoadFont
+	call ReloadFontAndTileset
+	call Call_ExitMenu
+	call GetMemSGBLayout
+	call WaitBGMap
+	call UpdateTimePals
+	pop af
+	ldh [hMapAnims], a
 	ret
 
 StartMenu_Reset:

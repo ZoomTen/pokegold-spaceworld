@@ -598,10 +598,10 @@ TrainerGear_Phone:
 	ld b, SGB_TRAINER_GEAR
 	call GetSGBLayout
 	call LoadFontExtra
-	ld de, .OutOfRangeText
-	coord hl, 7, 7
+	ld de, TrainerGear_OutOfRange
+	coord hl, 4, 7
 	call PlaceString
-	ld hl, .DarnText
+	ld hl, TrainerGear_Darn
 	call PrintText
 	call WaitBGMap
 	ret
@@ -721,6 +721,20 @@ TrainerGear_DrawBox:
 
 SECTION "engine/trainer_gear.asm@TrainerGear_RadioText", ROMX
 
-TrainerGear_RadioText:
+TrainerGear_RadioText_OLD:
 	text "エーボタンで　チューニング！"
+	done
+
+SECTION "engine/trainer_gear.asm@TrainerGear_RadioTextNew", ROMX
+
+TrainerGear_RadioText:
+	text "Tune the radio"
+	line "by pressing A!"
+	done
+
+TrainerGear_OutOfRange:
+	db "OUT OF RANGE@"
+
+TrainerGear_Darn:
+	text "Darn…"
 	done

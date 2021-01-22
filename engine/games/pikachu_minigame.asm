@@ -251,8 +251,8 @@ PikachuMiniGame_BlinkText:
 	ret
 
 .text
-	db "スタートホタン▶タイトルかめん"
-	db 0	; terminator
+	db "START ▶ Title"
+	db 0,0,0	; terminator
 
 PikachuMiniGame_Copy128Tiles:	; unreferenced?
 	ld bc, $80 tiles
