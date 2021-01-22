@@ -20,8 +20,9 @@ SPRITEANIMSTRUCT_LENGTH EQU const_value
 NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 
 ; wSpriteAnimDict keys
-SPRITE_ANIM_DICT_DEFAULT EQU $00
+SPRITE_ANIM_DICT_DEFAULT   EQU $00
 SPRITE_ANIM_DICT_GS_SPLASH EQU $27
+SPRITE_ANIM_DICT_29        EQU $29
 
 ; wSpriteAnimDict size (see ram/wram.asm)
 NUM_SPRITEANIMDICT_ENTRIES EQU 10
@@ -62,8 +63,7 @@ SPRITE_ANIM_INDEX_SLOTS_EGG                     EQU $3f
 
 SPRITE_ANIM_INDEX_40                            EQU $40
 SPRITE_ANIM_INDEX_41                            EQU $41
-SPRITE_ANIM_INDEX_44                            EQU $44
-SPRITE_ANIM_INDEX_4B                            EQU $4b
+SPRITE_ANIM_INDEX_TRAINERGEAR_POINTER           EQU $44
+SPRITE_ANIM_INDEX_RADIO_TUNING_KNOB             EQU $4b
 
 SPRITE_ANIM_INDEX_28                            EQU $28
-
