@@ -15,16 +15,16 @@ SetClockDialog:
 	ld hl, SetClockDialog_ConfirmTimeDate
 	call PrintText
 
-	hlcoord 3, 13
+	hlcoord 1, 14
 	call SetClockDialog_PrintDayOfWeek
 	ld de, wHourBuffer
 
-	hlcoord 8, 14
-	call SetClockDialog_PrintNumber
+	hlcoord 11, 14
+	call SetClockDialog_PrintNumber_LeadingZeroes
 	ld de, wMinuteBuffer
 
-	hlcoord 12, 14
-	call SetClockDialog_PrintNumber
+	hlcoord 14, 14
+	call SetClockDialog_PrintNumber_LeadingZeroes
 
 	call YesNoBox
 	jr c, SetClockDialog
@@ -115,10 +115,10 @@ SetClockDialog_AskDay:
 	ret
 
 .DayString:
-	db "ようび@"
+	db "DAY@"
 
 SetClockDialog_ChooseDayOfWeek:
-	hlcoord 9, 15
+	hlcoord 4, 16
 	call SetClockDialog_PrintDayOfWeek
 	call GetJoypadDebounced
 	ld hl, hJoySum
@@ -168,7 +168,7 @@ SetClockDialog_AskHour:
 	ld hl, SetClockDialog_HowManyHours
 	call PrintText
 
-	hlcoord 10, 16
+	hlcoord 11, 16
 	ld de, .HoursString
 	call PlaceString
 	ld hl, wJumptableIndex
@@ -176,7 +176,7 @@ SetClockDialog_AskHour:
 	ret
 
 .HoursString:
-	db "じ@"
+	db "hrs.@"
 
 SetClockDialog_ChooseHour:
 	ld de, wHourBuffer
@@ -237,7 +237,7 @@ SetClockDialog_ChooseHour:
 SetClockDialog_AskMinutes:
 	ld hl, SetClockDialog_HowManyMinutes
 	call PrintText
-	hlcoord 10, 16
+	hlcoord 11, 16
 	ld de, .MinutesString
 	call PlaceString
 	ld hl, wJumptableIndex
@@ -245,7 +245,7 @@ SetClockDialog_AskMinutes:
 	ret
 
 .MinutesString:
-	db "ふん@"
+	db "mins.@"
 
 SetClockDialog_ChooseMinutes:
 	ld de, wMinuteBuffer
@@ -309,15 +309,32 @@ SetClockDialog_PrintDayOfWeek:
 ; Print top half
 	ld a, [wDayOfWeekBuffer]
 	sla a
-	add $40
-	ld [hl], a
-	inc a
+	sla a
+	sla a
+	push hl
+	ld c, a
+	ld b, 0
+	ld hl, SetClockDialog_DayOfWeekTable
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+.loop
+	ld a, [de]
+	cp "@"
+	ret z
+	ld [hli], a
+	inc de
+	jr .loop
 
-; Move down one row and print the bottom half
-	ld de, SCREEN_WIDTH
-	add hl, de
-	ld [hl], a
-	ret
+SetClockDialog_DayOfWeekTable:
+	db "   SUN@@"
+	db "   MON@@"
+	db "  TUES@@"
+	db "WEDNES@@"
+	db " THURS@@"
+	db "   FRI@@"
+	db " SATUR@@"
 
 SetClockDialog_PrintNumber:
 	push hl
@@ -329,21 +346,30 @@ SetClockDialog_PrintNumber:
 	call PrintNumber
 	ret
 
+SetClockDialog_PrintNumber_LeadingZeroes:
+	push hl
+	ld a, $7f
+	ld [hli], a
+	ld [hl], a
+	pop hl
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNumber
+	ret
+
 SetClockDialog_WhatDayIsIt:
-	text "きょうは　なんようび　だったかの？"
+	text "What day is it?"
 	done
 
 SetClockDialog_HowManyHours:
-	text "いまは　なんじ　じゃ？"
+	text "How many hours?"
 	done
 
 SetClockDialog_HowManyMinutes:
-	deciram wStartHour, 1, 2
-	text "じ　なんふん　かな？"
+	text "How many minutes?"
 	done
 
 SetClockDialog_ConfirmTimeDate:
-	text "　　　ようび　　　じ　　　ふん"
-	line "ほんとうに　あっているかの？"
+	text "      DAY   :  "
+	line "Is that right?"
 	done
 

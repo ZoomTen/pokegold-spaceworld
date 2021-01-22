@@ -4050,30 +4050,30 @@ Function7a93:
 	ret
 
 Text7bad:
-	db "はなしの　はやさ"
-	next "　はやい　　　　ふつう　　　　おそい"
+	db "TEXT SPEED"
+	next "　FAST　　　MED　　　 SLW"
 	text_end
 
 Text7bc9:
-	db "せんとう　アニメーション"
-	next "　じっくり　みる　　とばして　みる"
+	db "BATTLE ANIMATION"
+	next " ON       OFF    "
 	text_end
 
 Text7be8:
-	db "しあいの　ルール"
-	next "　いれかえタイプ　　かちぬきタイプ"
+	db "BATTLE STYLE"
+	next " SHIFT    SET    "
 	text_end
 
 Text7c03:
-	db "　モノラル　　　　　ステレオ"
+	db "　MONO　　　  STEREO"
 	text_end
 
 Text7c12:
-	db "　おわり"
+	db " DONE"
 	text_end
 
 Text7c17:
-	db "　わく　を　かえる　"
+	db " FRAMETYPE"
 	text_end
 
 Table7c22:

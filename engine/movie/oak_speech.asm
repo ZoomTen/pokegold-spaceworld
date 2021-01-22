@@ -376,69 +376,32 @@ OakSpeechDemo::
 	text_end
 
 OakSpeech1::
-	text "いやあ　またせた！"
-
-	para "ポケット　モンスターの　せかいへ"
-	line "ようこそ！"
-
-	para "わたしの　なまえは　オーキド"
-
-	para "みんなからは　#　はかせと"
-	line "したわれて　おるよ"
-	prompt
+	text_far _OakSpeech1
+	text_end
 
 OakSpeech2::
-	text "きみも　もちろん"
-	line "しっているとは　おもうが"
-
-	para "この　せかいには"
-	line "ポケット　モンスターと　よばれる"
-	cont "いきもの　たちが"
-	cont "いたるところに　すんでいる！"
-	prompt
+	text_far _OakSpeech2
+	text_end
 
 OakSpeech3::
-	text "その　#　という　いきものを"
-	line "ひとは　ぺットに　したり"
-	cont "しょうぶに　つかったり"
-	cont "そして・・・"
-
-	para "わたしは　この　#の"
-	line "けんきゅうを　してる　というわけだ"
-	prompt
+	text_far _OakSpeech3
+	text_end
 
 OakSpeech4::
-	text "では　はじめに　きみの　なまえを"
-	line "おしえて　もらおう！"
-	prompt
+	text_far _OakSpeech4
+	text_end
 
 OakSpeech5::
-	text "そして　この　しょうねんは"
-	line "きみの　おさななじみであり"
-	cont"ライバルである"
-
-	para "・・・えーと？"
-	line "なまえは　なんて　いったかな？"
-	prompt
+	text_far _OakSpeech5
+	text_end
 
 OakSpeech6::
-	text "さて　きみの　きねんすべき"
-	line "たびだちのひを"
-	cont "きろくしておこう！"
-
-	para "じかんも　なるべく　せいかくにな！"
-	prompt
+	text_far _OakSpeech6
+	text_end
 
 OakSpeech7::
-	text "<PLAYER>！"
-
-	para "いよいよ　これから"
-	line "きみの　ものがたりの　はじまりだ！"
-
-	para "ゆめと　ぼうけんと！"
-	line "ポケット　モンスターの　せかいへ！"
-
-	para "レッツ　ゴー！"
+	text_far _OakSpeech7
+	text_end
 	done
 
 SetPlayerNamesDebug::
@@ -454,10 +417,10 @@ CopyNameDebug:
 	ret
 
 DebugPlayerName:
-	db "コージ@"
+	db "KOJI@"
 
 DebugRivalName:
-	db "レッド@"
+	db "RED@"
 
 ChoosePlayerName::
 	call PanPortraitRight
@@ -492,8 +455,8 @@ ChoosePlayerName::
 	ret
 
 ChoosePlayerNameEndText:
-	text "ふむ・・・"
-	line "<PLAYER>　と　いうんだな！"
+	text "Right! So your"
+	line "name is <PLAYER>!"
 	prompt
 
 PlayerNameMenuHeader:
@@ -505,12 +468,12 @@ PlayerNameMenuHeader:
 PlayerNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
 	db 04 ; items
-	db "じぶんできめる@"
-	db "ゴールド@"
-	db "サトシ@"
-	db "ジャック@"
+	db "NEW NAME@"
+	db "GOLD@"
+	db "ASH@"
+	db "JACK@"
 	db 3 ; x offset for the title string
-	db "なまえこうほ@"
+	db "NAME@"
 
 ChooseRivalName::
 	call PanPortraitRight
@@ -545,8 +508,9 @@ ChooseRivalName::
 	ret
 
 ChooseRivalNameEndText:
-	text "そうか　そうだったな"
-	line "<RIVAL>　という　なまえだ"
+	text "That's right! I"
+	line "remember now! His"
+	cont "name is <RIVAL>!"
 	prompt
 
 RivalNameMenuHeader:
@@ -557,13 +521,14 @@ RivalNameMenuHeader:
 
 RivalNameMenuData:
 	db STATICMENU_CURSOR | STATICMENU_PLACE_TITLE | STATICMENU_DISABLE_B
-	db 04 ; items
-	db "じぶんできめる@"
-	db "シルバー@"
-	db "シゲル@"
-	db "ジョン@"
+	db 5 ; items
+	db "NEW NAME@"
+	db "SILVER@"
+	db "GARY@"
+	db "JOHN@"
+	db "FRIGO@"
 	db 3
-	db "なまえこうほ@"
+	db "NAME@"
 
 MomNamePrompt::
 	ld hl, MomNameMenuHeader

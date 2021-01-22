@@ -138,7 +138,7 @@ MainMenu::
 
 MainMenuHeader:
 	db MENU_BACKUP_TILES
-	menu_coords 0, 0, 13, 7
+	menu_coords 0, 0, 14, 7
 	dw .MenuData
 	db 1 ; default option
 
@@ -150,15 +150,15 @@ MainMenuHeader:
 	dw .Strings
 
 .Strings:
-	db "つづきから　はじめる@"
-	db "さいしょから　はじめる@"
-	db "せっていを　かえる@"
-	db "#を　あそぶ@"
-	db "じかんセット@"
+	db "CONTINUE@"
+	db "STORY MODE@"
+	db "OPTIONS@"
+	db "PLAY #MON@"
+	db "SET TIME@"
 
 MainMenuJumptable:
 	dw MainMenuOptionContinue
-	dw StartNewGame
+	dw StartNewGame_Story
 	dw MenuCallSettings
 	dw StartNewGame
 	dw MainMenuOptionSetTime
@@ -179,8 +179,9 @@ ContinueMenu:
 	db -1
 
 PlayPokemonMenu:
-	db 2
+	db 3
 	db PLAY_POKEMON
+	db NEW_GAME
 	db OPTION
 	db -1
 
@@ -303,5 +304,24 @@ StartNewGame::
 	ld a, [wDebugFlags]
 	bit DEBUG_FIELD_F, a
 	jp z, DemoStart
+	call DebugSetUpPlayer
+	jp IntroCleanup
+
+StartNewGame_Story::
+	ld de, MUSIC_NONE
+	call PlayMusic
+	ld de, MUSIC_OAK_INTRO
+	call PlayMusic
+	call LoadFontExtra
+	xor a
+	ldh [hBGMapMode], a
+	callba InitializeNewGameWRAM
+	call ClearTileMap
+	call ClearWindowData
+	xor a
+	ldh [hMapAnims], a
+	ld a, [wDebugFlags]
+	bit DEBUG_FIELD_F, a
+	jp z, GameStart
 	call DebugSetUpPlayer
 	jp IntroCleanup

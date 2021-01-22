@@ -380,11 +380,11 @@ ROMX $23
 	"data/pokemon/menu_icons.asm"
 
 ROMX $24
-	org $4000
-	"engine/menu/set_clock_dialog.asm"
+	org $423a
 	"engine/games/slot_machine_game.asm"
 	"gfx.asm@Slot Machine GFX"
 	"English text"
+	"engine/menu/set_clock_dialog.asm"
 
 ROMX $25
 	org $4000

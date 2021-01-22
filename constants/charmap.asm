@@ -155,6 +155,7 @@
 
 	charmap "　", $7f
 
+	charmap "…", $ba
 	charmap "ア", $80
 	charmap "イ", $81
 	charmap "ウ", $82
