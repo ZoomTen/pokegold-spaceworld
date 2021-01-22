@@ -366,35 +366,14 @@ DemoItemList::
 	db $FF
 
 DemoPlayerName::
-	db "サトシ@"
+	db "ASH@"
 
 DemoRivalName::
-	db "シゲル@"
+	db "GARY@"
 
 OakSpeechDemo::
-	text "ようこそ"
-	line "ポケット　モンスターの　せかいへ！"
-	cont "ごぞんじ　わしが　オーキドじゃ！"
-
-	para "きょう　きみに　きてもらったのは"
-	line "ほかでもない"
-	cont "あたらしい　ずかんづくりを"
-	cont "てつだって　ほしいのじゃ！"
-
-	para "もちろん"
-	line "きみの　パートナーとなる　ポケモンと"
-	cont "りュックは　ようい　しておる"
-
-	para "りュックの　なかには"
-	line "キズぐすりと"
-	cont "モンスターボールが"
-	cont "はいっておるから　あんしんじゃ！"
-
-	para "すでに　きみの　ライバルは"
-	line "しゅっぱつ　しとる"
-
-	para "まけないよう　がんばって　くれい！"
-	prompt
+	text_far _OakSpeechDemo
+	text_end
 
 OakSpeech1::
 	text "いやあ　またせた！"

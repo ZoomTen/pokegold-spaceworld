@@ -384,6 +384,7 @@ ROMX $24
 	"engine/menu/set_clock_dialog.asm"
 	"engine/games/slot_machine_game.asm"
 	"gfx.asm@Slot Machine GFX"
+	"English text"
 
 ROMX $25
 	org $4000
