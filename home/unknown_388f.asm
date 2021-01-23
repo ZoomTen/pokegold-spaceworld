@@ -92,5 +92,6 @@ Function3920::
 	jp Init
 
 .text:
-	text "つぎは　がんばるぞ！！"
+	text_far _DemoEndText
+	db "@がんばるぞ！！"
 	done

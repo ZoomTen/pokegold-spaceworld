@@ -111,3 +111,8 @@ _OakSpeech7::
 	cont "with #MON"
 	cont "awaits! Let's go!"
 	prompt
+
+_DemoEndText::
+	text "I'll try harder"
+	line "next time!"
+	done
