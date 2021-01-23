@@ -782,6 +782,7 @@ ROMX $34
 	"scripts/SilentHillPokecenter.asm"
 	"data/maps/objects/SilentHillHouse.asm"
 	"scripts/SilentHillHouse.asm"
+	org $4aac
 	"data/maps/objects/SilentHillLabFront.asm"
 	"scripts/SilentHillLabFront.asm"
 	"data/maps/objects/SilentHillLabBack.asm"

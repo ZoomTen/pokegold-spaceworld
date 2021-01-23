@@ -604,26 +604,34 @@ SilentHillLabFrontText1:
 	ret
 
 SilentHillLabFrontTextString1:
-	text "パソコンを　みると"
-	line "なんと　メールが　きていた！"
+	text "There's an"
+	line "e-mail here!"
 
-	para "<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	line "オーキドはかせ！"
-	cont "あなたが　ゆくえふめいに"
-	cont "なっていると　せけんは"
-	cont "おおさわぎ　です！"
+	para "… …"
+	line "PROF. OAK!"
+	cont "The world is in"
+	cont "a terrible stir"
+	cont "over your unknown"
+	cont "whereabouts!"
 
-	para "それは　そうと"
-	line "はかせ　から　みつけるように"
-	cont "たのまれた　れいの#"
-	cont "みつけるどころか"
-	cont "まだ　てがかりも"
-	cont "つかむことが　できません"
+	para "As for the"
+	line "#MON the"
+	cont "professor requested"
+	cont "I search for…"
 
-	para "やはり　あいつは"
-	line "かくうの　#なのでは"
-	cont "ないでしょうか<⋯⋯>"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>じょしゅより"
+	para "I am yet to find"
+	line "even a single lead,"
+	cont "let alone deduce"
+	cont "its location."
+
+	para "I suppose that's"
+	line "to be expected…"
+	cont "After all, it's"
+	cont "high up in the"
+	cont "sky."
+
+	para "Regards,"
+	line "Your AIDE"
 	done
 
 SilentHillLabFrontText2:
@@ -641,13 +649,14 @@ SilentHillLabFrontText2:
 	ret
 
 SilentHillLabFrontTextString2A:
-	text "スタート　ボタンを　プシュ！"
-	line "おすと　メニューが　ひらくなり"
+	text "Push START to"
+	line "open the MENU!"
 	done
 
 SilentHillLabFrontTextString2B:
-	text "セーブするには　#　レポート"
-	line "こまめに　かくと　いいなり"
+	text "The SAVE option is"
+	line "on the MENU"
+	cont "screen."
 	done
 
 SilentHillLabFrontText3:
@@ -656,7 +665,7 @@ SilentHillLabFrontText3:
 	ret
 
 SilentHillLabFrontTextString3:
-	text "カギが　かかっている"
+	text "It's locked."
 	done
 
 SilentHillLabFrontText4:
@@ -668,19 +677,21 @@ SilentHillLabFrontText4:
 	ret
 
 SilentHillLabFrontTextString4:
-	text "オーキド『ごくろうさん！"
+	text "OAK: Good work!"
 	done
 
 SilentHillLabFrontTextString5:
-	text "オーキド『そうとも！"
-	line "わしが　オーキドじゃ！"
-	cont "じじいで　わるかったな！"
+	text "OAK: Indeed! I am"
+	line "PROF. OAK. You've"
+	cont "got quite the"
+	cont "mouth on you!"
 
-	para "おまえたち　ふたりは"
-	line "この　オーキドが　よんだのじゃ！"
+	para "It is indeed I"
+	line "who called you"
+	cont "here!"
 
-	para "すこし　わしの　はなしを"
-	line "きいては　くれんか？@"
+	para "Won't you listen"
+	line "for a while?@"
 	db $08
 
 SilentHillLabFrontText6:
@@ -700,57 +711,70 @@ SilentHillLabFrontText6:
 	jr .loop
 
 SilentHillLabFrontTextString6A:
-	text "オーキド『いまから　１ねんまえ"
-	line "わしは　カントーで"
-	cont "きみたちの　ような　しょうねんに"
-	cont "#の　けんきゅうの　ため"
-	cont "#と　ずかんを　わたした"
+	text "OAK: One year ago,"
+	line "in KANTO, I"
+	cont "entrusted two boys"
+	cont "much like you"
+	cont "with a #MON and"
+	cont "a #DEX each,"
+	cont "to assist in"
+	cont "my research."
 
-	para "そして　かれらは"
-	line "じつに　よくやってくれた！"
+	para "In the end,"
+	line "they did an"
+	cont "astounding job!"
 
-	para "１５０しゅるいの"
-	line "#を　みつけることに"
-	cont "せいこう　したのじゃ！"
-	cont "が　<⋯⋯>　<⋯⋯>　<⋯⋯>"
-	cont "しかし　<⋯⋯>　<⋯⋯>"
+	para "They succeeded in"
+	line "discovering 150"
+	cont "species of"
+	cont "#MON!"
 
-	para "せかいは　ひろいものじゃ"
-	line "そのご　ぜんこく　かくちで"
-	cont "あたらしい　#が　ぞくぞくと"
-	cont "みつかっておる！"
+	para "However, it's a"
+	line "vast world we"
+	cont "live in. All"
+	cont "sorts of new"
+	cont "#MON started"
+	cont "being found all"
+	cont "over the country!"
 
-	para "そこで　わしは　カントーから"
-	line "ここ　サイレントヒルに"
-	cont "けんきゅうの　ばしょを　うつした"
+	para "It is why I moved"
+	line "from KANTO to here,"
+	cont "SILENT HILL, to"
+	cont "establish a new"
+	cont "laboratory."
 
-	para "ばしょが　かわれば"
-	line "あたらしい　#にも"
-	cont "であうことが　できるからな"
-	cont "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
+	para "In a new place, new"
+	line "#MON may well be"
+	cont "found!"
 
-	para "これからも　どんどんと"
-	line "けんきゅうを　すすめるが"
-	cont "わしも　ごらんのとおりの　おいぼれ"
-	cont "まごや　じょしゅたちも　おるが"
-	cont "それでも　やはり　かずが　たらん！"
+	para "I'll be hard at"
+	line "work doing"
+	cont "research from"
+	cont "now on, but as you"
+	cont "see, I'm growing"
+	cont "old."
 
-	para "<PLAYER>！　<RIVAL>！"
-	line "#けんきゅうの　ために"
-	cont "ちからを　かして　くれんか！"
+	para "My grandson and"
+	line "AIDEs help, but"
+	cont "it's a huge"
+	cont "undertaking!"
+
+	para "<PLAYER>! <RIVAL>!"
+	line "Will you join me"
+	cont "in my research?"
+
 	done
 
 SilentHillLabFrontTextString6B:
-	text "オーキド『そうか<⋯⋯>"
-	line "わしに　ひとを　みるめが"
-	cont "なかったと　いうことじゃな<⋯⋯>"
+	text "OAK: Oh, I suppose"
+	line "I might not be as"
+	cont "good a judge of"
+	cont "character as I"
+	cont "thought."
 
-	para "いや！"
-	line "わしの　ひとを　みるめは"
-	cont "まちがっては　おらんはず！"
-
-	para "な？"
-	cont "わしの　はなしを　きいてくれるな？"
+	para "No, it can't be…"
+	line "You'll surely"
+	cont "listen, no?"
 	done
 
 SilentHillLabFrontTextString7:
