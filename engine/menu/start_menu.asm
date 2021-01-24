@@ -287,8 +287,8 @@ ToolsPocketHeader:
 	dw wNumBagItems
 
 	dba Function2473b
-	dba Function24783
-	dba Function241ef
+	dba PlaceMenuItemQuantity
+	dba UpdateItemDescription
 
 	dw KeyItemsPocketHeader
 	dw wBackpackAndKeyItemsCursor
@@ -306,8 +306,8 @@ KeyItemsPocketHeader:
 	dw wNumKeyItems
 
 	dba Function2473b
-	dba Function24783
-	dba Function241ef
+	dba PlaceMenuItemQuantity
+	dba UpdateItemDescription
 
 BackpackMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -321,8 +321,8 @@ BackpackMenuHeader:
 	dw wNumBagItems
 
 	dba Function2473b
-	dba Function24783
-	dba Function241ef
+	dba PlaceMenuItemQuantity
+	dba UpdateItemDescription
 
 GetPocket2Status:
 ; puts 2 in wActiveBackpackPocket if pocket 2 has items
@@ -502,7 +502,7 @@ HandleBackpackInput:
 	jp .exit
 
 .BackpackSelect
-	callab Function245c5
+	callab SwitchItemsInBag
 	jp .exit
 
 .exit
@@ -522,7 +522,7 @@ HandleBackpackInput:
 	ret
 
 BackpackSelected:
-	callab Function243af
+	callab ScrollingMenu_ClearLeftColumn
 	call PlaceHollowCursor
 	call LoadItemData
 	callab CheckItemMenu
@@ -690,7 +690,7 @@ TryTossItem:
 	jr nz, .TossFail
 	ld hl, .TossedText
 	call MenuTextBox
-	callab Function24c60
+	callab SelectQuantityToToss
 	push af
 	call CloseWindow
 	call ExitMenu
@@ -821,9 +821,9 @@ BallPocket:
 	db 0 ; ???
 	dw wNumBallItems
 
-	dba Function24774
-	dba Function24783
-	dba Function241ef
+	dba PlaceMenuItemName
+	dba PlaceMenuItemQuantity
+	dba UpdateItemDescription
 
 DrawBackpackTitleRow:
 	push de
