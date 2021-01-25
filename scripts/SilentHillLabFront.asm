@@ -738,8 +738,8 @@ SilentHillLabFrontTextString6A:
 	cont "over the country!"
 
 	para "It is why I moved"
-	line "from KANTO to here,"
-	cont "SILENT HILL, to"
+	line "from KANTO to"
+	cont "SILENT TOWN, to"
 	cont "establish a new"
 	cont "laboratory."
 
@@ -778,8 +778,8 @@ SilentHillLabFrontTextString6B:
 	done
 
 SilentHillLabFrontTextString7:
-	text "オーキド『ふたりとも！"
-	line "ちょっと　わしに　ついてこい！"
+	text "OAK: Follow me,"
+	line "you two!"
 	done
 
 SilentHillLabFrontText7:
@@ -796,14 +796,15 @@ SilentHillLabFrontText7:
 	ret
 
 SilentHillLabFrontTextString8:
-	text "オーキド『<PLAYER>！<RIVAL>！"
-	line "このずかんを"
-	cont "おまえたちに　あずける！"
+	text "OAK: <PLAYER>!"
+	line "<RIVAL>!"
+	para "Take these with"
+	line "you!"
 	done
 
 SilentHillLabFrontTextString9:
-	text "<PLAYER>は　オーキドから"
-	line "#ずかんを　もらった！"
+	text "<PLAYER> got"
+	line "#DEX from OAK!"
 	done
 
 SilentHillLabFrontTextString10:

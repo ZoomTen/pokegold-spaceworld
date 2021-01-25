@@ -170,11 +170,11 @@ _PlayerHouse2FTextString4::
 	done
 
 _PlayerHouse2FTextString6::
-	text "I hope you'll excuse"
-	line "the sudden e-mail,"
-	cont "but there's"
-	cont "something that I"
-	cont "would like to"
+	text "I hope you'll"
+	line "excuse the sudden"
+	cont "e-mail, but there"
+	cont "is something that"
+	cont "I would like to"
 	cont "entrust you with."
 
 	para "Won't you come by"
@@ -186,7 +186,7 @@ _PlayerHouse2FTextString6::
 
 _PlayerHouse2FTextString7::
 	text "Maybe I'll read"
-	line "this later."
+	line "it later."
 	done
 
 _PlayerHouse2FTextString8::
@@ -257,3 +257,105 @@ _PlayerHouse2FTextString9::
 	line "to our regular"
 	cont "program."
 	done
+
+_PC_NotConnectedText:
+	text "Looks like the"
+	line "PC failed to"
+	cont "connect…"
+	prompt
+
+_PC_ConnectedText:
+	text "<PLAYER> booted"
+	line "up the PC."
+
+	para "Connected to the"
+	line "network."
+	prompt
+
+_PC_NoMonsText:
+	text "Beep!"
+
+	para "You can't use the"
+	line "PC if you have"
+	cont "no #MON!"
+	prompt
+
+_PC_SkarmoryText:
+	text "#MON JOURNAL"
+	line "HOMEPAGE"
+
+	para "… … …"
+	para "A new #MON has"
+	line "been discovered!"
+
+	para "Dubbed SKARMORY,"
+	line "this #MON"
+	cont "has steel-hard"
+	cont "wings."
+
+	para "It has been"
+	line "classified as the"
+	cont "FLYING type, as"
+	cont "well as the newly-"
+	cont "formulated METAL"
+	cont "type."
+
+	para "Further research"
+	line "is being conduc-"
+	cont "ted."
+	done
+
+_PC_OaksPCText:
+	text "Too many people"
+	line "are trying to"
+	cont "connect!"
+	prompt
+
+_PC_ClosedPCText:
+	text "<PLAYER> stopped"
+	line "connecting to the"
+	cont "network."
+	prompt
+
+_PC_OpenMyPCText:
+	text "Accessed my PC."
+
+	para "Opened the Item"
+	line "Storage System."
+	prompt
+
+_PC_ClosedMyPCText:
+	text "<PLAYER> logged"
+	line "off."
+	prompt
+
+_PC_HowManyWithdrawText:
+	text "How many items to"
+	line "withdraw?"
+	done
+
+_PC_NoRoomWithdrawText:
+	text "No more room in"
+	line "the PACK!"
+	done
+
+_PC_NoItemsText:
+	text "There are no items"
+	line "to deposit!"
+	prompt
+
+_PC_CantDepositText:
+	text "You can't deposit"
+	line "this item!"
+	prompt
+
+_PC_CantDepositBallPocketText:
+	text "You can't deposit"
+	line "the BALL POCKET!"
+	prompt
+
+_PC_HowManyDepositText:
+	text "How many items to"
+	line "deposit?"
+	done
+

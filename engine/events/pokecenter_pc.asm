@@ -32,7 +32,9 @@ PokemonCenterPC:
 	ret
 
 .NotConnectedText:
-	text "<⋯⋯>　が　つながっていなかった"
+	text_far _PC_NotConnectedText
+	text_end
+	db "つながっていなかった"
 	line "ようだ　<⋯⋯>"
 	prompt
 
@@ -54,7 +56,9 @@ PokemonCenterPC:
 	ret
 
 .TurnOnText:
-	text "コンピューターを　きどう！"
+	text_far _PC_ConnectedText
+	text_end
+	db "ーターを　きどう！"
 	para "ネットワークにせつぞくした！"
 	prompt
 
@@ -72,11 +76,11 @@ PokemonCenterPC:
 	dw .MenuStrings
 
 .MenuStrings:
-	db "<PLAYER>の　パソコン@"
-	db "？？？の　パソコン@"
-	db "オーキドの　パソコン@"
-	db "でんどういり@"
-	db "せつぞくをきる@"
+	db "<PLAYER>'s PC@"
+	db "???'s　PC@"
+	db "OAK's PC@" ; PROF.OAK's PC
+	db "HALL OF FAME@"
+	db "LOG OFF@@@"
 
 .Jumptable:
 	dw PlayersPC
@@ -110,7 +114,8 @@ PC_PlayBootSound:
 	ret
 
 .NoPokemonText:
-	text "ピーッ！"
+	text_far _PC_NoMonsText
+	text_end
 	line "ポケモンを　もっていない"
 	cont "ひとは　つかうことが　できません！"
 	text_end
@@ -125,7 +130,9 @@ PC_Demo:
 	ret
 
 .SkarmoryText:
-	text "ポケモン　ジャーナル　ホームぺージ"
+	text_far _PC_SkarmoryText
+	text_end
+	db "　ジャーナル　ホームぺージ"
 	line "<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>　<⋯⋯>"
 	para "しんポケモン　はっけん！！"
 	line "めいめい　ヨロイドり"
@@ -155,7 +162,9 @@ OaksPC:
 	ret
 
 .TooManyConnectionsText:
-	text "かいせん　が　こみあっていて"
+	text_far _PC_OaksPCText
+	text_end
+	db "　が　こみあっていて"
 	line "せつぞくできません"
 	prompt
 
@@ -166,7 +175,9 @@ TurnOffPC:
 	ret
 
 .ClosedPCText:
-	text "ネットワークへの　せつぞくを"
+	text_far _PC_ClosedPCText
+	text_end
+	db "ークへの　せつぞくを"
 	line "やめました"
 	prompt
 
@@ -202,10 +213,10 @@ _PlayersPC:
 .MenuStrings:
 	db STATICMENU_CURSOR
 	db 4
-	db "ひきだす@"
-	db "あずける@"
-	db "すてる@"
-	db "せつぞくをきる@"
+	db "TAKE@" ; WITHDRAW ITEM
+	db "STORE@"; DEPOSIT ITEM
+	db "TOSS@" ; TOSS ITEM
+	db "DONE@@"; LOG OFF
 
 .Jumptable:
 	dw PlayerWithdrawItemMenu
@@ -214,14 +225,18 @@ _PlayersPC:
 	dw PlayerLogOffMenu
 
 .TurnOnText:
-	text "<PLAYER>は　じぶんのパソコンに"
+	text_far _PC_OpenMyPCText
+	text_end
+	db "ぶんのパソコンに"
 	line "つないだ"
 	para "どうぐあずかりシステムを"
 	line "よびだした！"
 	prompt
 
 .ShutDownText:
-	text "<PLAYER>は　じぶんのパソコンとの"
+	text_far _PC_ClosedMyPCText
+	text_end
+	db "ぶんのパソコンとの"
 	line "せつぞくをきった"
 	para ""
 	done
@@ -280,19 +295,24 @@ PlayerWithdrawItemMenu:
 	ret
 
 .HowManyToWithdrawText:
-	text "いくつひきだしますか？"
+	text_far _PC_HowManyWithdrawText
+	text_end
+	db "きだしますか？"
 	done
 
 .WithdrewItemsText:
-	text_from_ram wStringBuffer2
-	text "を　@"
+	text "Withdrew @"
 	deciram wItemQuantity, 1, 2
-	text "こ　"
-	line "ひきだしました"
+	db $00
+	line "@"
+	text_from_ram wStringBuffer2
+	text "(s)."
 	prompt
 
 .NoRoomWithdrawText:
-	text "もちものが　いっぱいなので"
+	text_far _PC_NoRoomWithdrawText
+	text_end
+	db "ぱいなので"
 	line "ひきだせません！"
 	prompt
 
@@ -350,7 +370,9 @@ PlayerDepositItemMenu:
 	ret
 
 .NoItemsText:
-	text "どうぐを　ひとつも"
+	text_far _PC_NoItemsText
+	text_end
+	db "　ひとつも"
 	line "もっていない！"
 	prompt
 
@@ -375,7 +397,9 @@ PlayerDepositItemMenu:
 	ret
 
 .CantDepositText:
-	text "わざマシンは　"
+	text_far _PC_CantDepositText
+	text_end
+	db "ンは　"
 	line "あずけられない！"
 	prompt
 
@@ -385,7 +409,9 @@ PlayerDepositItemMenu:
 	ret
 
 .CantDepositBallText:
-	text "ボールホルダは"
+	text_far _PC_CantDepositBallPocketText
+	text_end
+	db "ルダは"
 	line "あずけられない！"
 	prompt
 
@@ -442,19 +468,23 @@ PlayerDepositItemMenu:
 	ret
 
 .HowManyDepositText:
-	text "いくつあずけますか？"
+	text_far _PC_HowManyDepositText
+	text_end
+	db "ずけますか？"
 	done
 
 .DepositItemsText:
-	text_from_ram wStringBuffer2
-	text "を　@"
+	text "Stored @"
 	deciram wItemQuantity, 1, 2
-	text "こ　"
-	line "あずけました"
+	text "<LINE>@"
+	text_from_ram wStringBuffer2
+	text "(s)."
 	prompt
 
 .NoRoomDepositText:
-	text "どうぐが　いっぱいです"
+	text_far _PC_NoRoomWithdrawText
+	text_end
+	db "っぱいです"
 	line "もう　あずけられません！"
 	prompt
 

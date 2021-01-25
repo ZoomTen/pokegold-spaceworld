@@ -32,7 +32,7 @@ DebugJumpTable::
 
 DebugMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 05, 02, SCREEN_WIDTH - 7, SCREEN_HEIGHT - 1
+	menu_coords 05, 02, SCREEN_WIDTH - 6, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 01 ; default option
 
@@ -44,12 +44,12 @@ DebugMenuHeader:
 	dw .Strings
 
 .Strings
-	db "ファイト@"
-	db "フィールド@"
-	db "サウンド@"
-	db "サブゲーム@"
-	db "モンスター@"
-	db "なまえ@"
+	db "FIGHT@"
+	db "FIELD@"
+	db "BGM@" ; SOUND TEST
+	db "GAME@" ; SUBGAME
+	db "#MON@"
+	db "GEAR@@"
 
 DebugMenuItems:
 	db 06

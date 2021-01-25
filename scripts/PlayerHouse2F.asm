@@ -164,8 +164,8 @@ PlayerHouse2FTextString5:
 	line "the PC."
 
 	para "…What's this?"
-	line "There seems to be a"
-	cont "new e-mail."
+	line "There seems to be"
+	cont "a new e-mail."
 
 	para "Read it?@"
 
