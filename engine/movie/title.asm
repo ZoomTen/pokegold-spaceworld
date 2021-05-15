@@ -18,7 +18,7 @@ IntroSequence::
 
 TitleSequenceStart::
 	call TitleSequenceInit
-	callab SetTitleBGDecorationBorder
+	;callab SetTitleBGDecorationBorder
 
 .loop
 	call TitleScreenMain
@@ -143,7 +143,7 @@ TitleSequenceInit::
 
 .load_position_table:
 	ld hl, FirePositionTable
-	ld c, 6 ; Load 6 flying objects on the screen.
+	ld c, 9 ; Load 6 flying objects on the screen.
 
 .set_fire_note_loop
 	push bc
@@ -161,12 +161,15 @@ TitleSequenceInit::
 	ret
 
 FirePositionTable::
-	dbpixel 28,  9,  0,  4
-	dbpixel 20, 11,  0,  0
-	dbpixel 18, 12,  0,  4
-	dbpixel 26, 14,  0,  0
-	dbpixel 22, 15,  0,  4
-	dbpixel  0, 17,  0,  0
+	dw	$2880
+	dw	$34c0
+	dw	$40f0
+	dw	$4ce0
+	dw	$58a0
+	dw	$6490
+	dw	$70d0
+	dw	$7cb0
+	dw	$8800
 
 TitleFireGFX:: INCBIN "gfx/title/fire.2bpp"
 TitleNotesGFX:: INCBIN "gfx/title/notes.2bpp"
@@ -305,6 +308,8 @@ TitleSeq_MoveTitleEnd::
 	call TitleSeq_IncreaseJumpTableIndex
 	ld de, MUSIC_TITLE
 	call PlayMusic
+	ld a, $40
+	ld [wJumptableIndex + 2], a
 	ret
 
 TitleSeq_InitFlashTitle::
@@ -482,9 +487,9 @@ LoadPrintArea::
 	ret
 
 PrintPMJapaneseChara::
-	coord hl, 15, 2
+	coord hl, 15, 1
 	ld a, "こ"
-	lb bc, 4, 4
+	lb bc, 4, 5
 	jr PrintBoxArea
 
 PrintPokemonLogo::
@@ -544,7 +549,7 @@ SRAMClearMenu::
 	jp Init
 
 SRAMClear_Message::
-	db "<NULL>すべての　セーブデータエりアを"
+	db "<NULL>すべての"
 	db "<LINE>クりア　しますか？<DONE>"
 
 SRAMClear_WinPOS::
