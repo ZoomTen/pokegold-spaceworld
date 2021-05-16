@@ -42,7 +42,7 @@ tools/gfx :=
 .SECONDEXPANSION:
 
 .PHONY: all
-all: $(ROM) $(CORRECTEDROM) compare
+all: $(CORRECTEDROM)
 
 .PHONY: compare
 compare: $(ROM) $(CORRECTEDROM)

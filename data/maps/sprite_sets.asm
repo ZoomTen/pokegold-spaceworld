@@ -42,7 +42,7 @@ SpriteSets:
 
 ; sprite set $01
 	db SPRITE_BLUE
-	db SPRITE_SILVER
+	db SPRITE_GIRL
 	db SPRITE_OFFICER
 	db SPRITE_TEACHER
 	db SPRITE_SUPER_NERD

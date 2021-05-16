@@ -13,7 +13,6 @@ SilentHill_ScriptLoader::
 	ld hl, SilentHillScriptPointers
 	call RunMapScript
 	call WriteBackMapScriptNumber
-
 ; run BG events
 	ld de, SilentHillBGEventRoutines
 	call CallMapTextSubroutine
@@ -21,25 +20,26 @@ SilentHill_ScriptLoader::
 
 SilentHillScriptPointers:
 ; 0 -------> Story mode?
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
 ; 1
-	dw SilentHillScript2
+	dw SilentHill_Script01
 	dw SilentHillNPCIDs_
 ; 2
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
 ; 3
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
 ; 4
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
 ; 5
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
+
 ; 6 -----> Field debug
-	dw SilentHillScript1
+	dw SilentHill_Script00
 	dw SilentHillNPCIDs_
 
 ; --------------------------------------------------------------------------- ;
@@ -52,7 +52,7 @@ SilentHillNPCIDs_:
 
 ; --------------------------------------------------------------------------- ;
 
-SilentHillScript1:
+SilentHill_Script00:
 ; player's x = 3?
 	ld a, [wXCoord]
 	cp 3
@@ -73,7 +73,7 @@ SilentHillScript1:
 	text "１２３"
 	done
 
-SilentHillScript2:
+SilentHill_Script01:
 ; empty
 	unlock_screen
 	ret

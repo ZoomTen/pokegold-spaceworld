@@ -22,7 +22,7 @@ SilentHill_MapEvents::
 	bg_event  6,  4, 1
 
 	def_object_events
-	object_event  6,  6, SPRITE_SILVER, $03, 6, 6, -1, -1, 0, 0, 0, 0, 0, 0
+	object_event  4,  6, SPRITE_GIRL, $08, 3, 0, -1, -1, 0, 0, 0, 0, 0, 0
 	object_event 13, 13, SPRITE_BLUE, SLOW_STEP_LEFT, 0, 0, -1, -1, 0, 0, 0, 0, 0, 0
 
 SilentHill_Blocks::
