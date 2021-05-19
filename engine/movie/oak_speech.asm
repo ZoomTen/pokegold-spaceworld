@@ -170,7 +170,7 @@ DebugSetUpPlayer::
 	ld a, $FF
 	ld [wd163], a
 	ld [wd164], a
-	call GiveRandomJohto
+	call GiveKantoStarters
 	ld a, $03
 	call AddRandomPokemonToBox
 	call FillTMs
