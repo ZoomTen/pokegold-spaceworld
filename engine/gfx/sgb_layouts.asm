@@ -696,10 +696,11 @@ PushSGBBorder:
 	ret
 
 .LoadSGBBorderPointers:
-	ld a, [wce5f]
+	jp .alternate_border
 	bit 3, a
 	jr nz, .spaceworld_border
 
+.alternate_border
 ; load alternate border
 	ld hl, AlternateSGBBorderGFX
 	ld de, AlternateSGBBorderTilemap
