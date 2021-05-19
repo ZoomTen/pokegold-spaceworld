@@ -659,3 +659,7 @@ PackIconGFX:: INCBIN "gfx/pack/pack_icons.2bpp"
 SECTION "gfx.asm@Town Map Cursor", ROMX
 TownMapCursorGFX::
 INCBIN "gfx/trainer_gear/town_map_cursor.2bpp"
+
+SECTION "gfx.asm@1996 Backsprite Patch", ROMX
+CustomBackSprite::
+INCBIN "gfx/trainer/protag_back.pic"
