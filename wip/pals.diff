@@ -1,0 +1,193 @@
+diff --git a/engine/palettes.asm b/engine/palettes.asm
+index 39c38d6..ff4ad56 100644
+--- a/engine/palettes.asm
++++ b/engine/palettes.asm
+@@ -1,6 +1,58 @@
+ INCLUDE "constants.asm"
+ 
+-SECTION "engine/palettes.asm@Overworld fade", ROMX
++SECTION "engine/palettes.asm@UpdateTimeOfDayPal", ROMX
++
++UpdateTimeOfDayPal:
++	call UpdateTime
++	call GetTimePalette
++	ret
++
++_TimeOfDayPals:
++	ld hl, wTimeOfDayPalFlags
++	bit 7, [hl]
++	ret nz
++	ld a, [wTimeOfDay]
++	ld hl, wCurTimeOfDay
++	cp [hl]
++	ret z
++	call OverworldFadeOut
++	call GetTimePalette
++	call Function8c46d
++	call OverworldFadeIn
++	ret
++
++Function8c2fe:
++	ld hl, wTimeOfDayPalFlags
++	res 7, [hl]
++	call OverworldFadeOut
++	call UpdateTime
++	call GetTimePalette
++	call Function8c46d
++	call OverworldFadeIn
++	ret
++
++Function8c313:
++	ld hl, wTimeOfDayPalFlags
++	set 7, [hl]
++	call OverworldFadeOut
++	call GetTimePalette
++	call Function8c46d
++	call OverworldFadeIn
++	ret
++
++Function8c325:
++	call OverworldFadeOut
++	call UpdateTime
++	call GetTimePalette
++	call Function8c46d
++	call OverworldFadeIn
++	ret
++
++_UpdateTimePals:
++	ld c, 9
++	call GetFadeStep
++	call ApplyPalettesAtHL
++	ret
+ 
+ OverworldFadeIn::
+ 	ld c, 0
+@@ -16,9 +68,92 @@ OverworldFadeOut::
+ 	call FadeTowardsBlack
+ 	ret
+ 
++ReplaceTimeOfDayPals:
++	ld hl, data_8c36d
++	ld a, [wMapPermissions]
++	cp 1
++	jr z, asm_8c368
++	cp 2
++	jr z, asm_8c368
++	inc hl
++	cp 4
++	jr z, asm_8c368
++	inc hl
+ 
+-; TODO: merge this
+-SECTION "engine/palettes.asm@Palette fading, part 2?", ROMX
++asm_8c368:
++	ld a, [hl]
++	ld [wTimeOfDayPalset], a
++	ret
++
++data_8c36d:
++	db %11100100
++	db %11100100
++	db %01100000
++
++GetTimePalette:
++	ld hl, wTimeOfDayPalFlags
++	bit 7, [hl]
++	jr nz, asm_8c3ca
++	ld a, [wTimeOfDay]
++	ld [wCurTimeOfDay], a
++	ld e, a
++	ld d, 0
++	ld hl, data_8c389
++	add hl, de
++	add hl, de
++	ld a, [hli]
++	ld h, [hl]
++	ld l, a
++	jp hl
++
++data_8c389:
++	dw asm_8c391
++	dw asm_8c39d
++	dw asm_8c3ad
++	dw asm_8c3bc
++
++asm_8c391:
++	xor a
++	ldh [hOverworldFlashlightEffect], a
++	ld a, [wTimeOfDayPalset]
++	and 3
++	ld [wTimeOfDayPal], a
++	ret
++
++asm_8c39d:
++	xor a
++	ldh [hOverworldFlashlightEffect], a
++	ld a, [wTimeOfDayPalset]
++	and $c
++	srl a
++	srl a
++	ld [wTimeOfDayPal], a
++	ret
++
++asm_8c3ad:
++	ld a, 3
++	ldh [hOverworldFlashlightEffect], a
++	ld a, [wTimeOfDayPalset]
++	and $30
++	swap a
++	ld [wTimeOfDayPal], a
++	ret
++
++asm_8c3bc:
++	xor a
++	ldh [hOverworldFlashlightEffect], a
++	ld a, [wTimeOfDayPalset]
++	and $c0
++	rlca
++	rlca
++	ld [wTimeOfDayPal], a
++	ret
++
++asm_8c3ca:
++	xor a
++	ldh [hOverworldFlashlightEffect], a
++	ld [wTimeOfDayPal], a
++	ret
+ 
+ ApplyPalettesAtHL::
+ 	push hl
+diff --git a/layout.link b/layout.link
+index 8a7a43d..91c1fae 100644
+--- a/layout.link
++++ b/layout.link
+@@ -370,10 +370,8 @@ ROMX $21
+ ROMX $23
+ 	org $4000
+ 	"engine/dumps/bank23.asm@AnimateTilesetImpl"
+-	org $433e
+-	"engine/palettes.asm@Overworld fade"
+-	org $43d1
+-	"engine/palettes.asm@Palette fading, part 2?"
++	org $42dc
++	"engine/palettes.asm@UpdateTimeOfDayPal"
+ 	org $44be
+ 	"engine/battle/battle_transitions.asm"
+ 	org $60cc
+diff --git a/shim.sym b/shim.sym
+index 5d9261e..32e6179 100755
+--- a/shim.sym
++++ b/shim.sym
+@@ -99,11 +99,7 @@
+ 14:4CD1 Function50cd1
+ 14:4ED9 Function50ed9
+ 
+-23:42DC UpdateTimeOfDayPal
+-23:42E3 _TimeOfDayPals
+-23:4335 _UpdateTimePals
+-23:4354 ReplaceTimeOfDayPals
+-23:4370 GetTimePalette
++23:446d Function8c46d
+ 23:4940 Function8c940
+ 23:49C6 Function8c9c6
+ 23:4CFD InitEffectObject

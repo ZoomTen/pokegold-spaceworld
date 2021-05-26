@@ -1,0 +1,240 @@
+01:4000 (PlaceWaitingText)
+01:5007 (Function5007)
+01:5190 (_UpdateSprites)
+01:52dc (Function52dc)
+01:52f9 (InitializeNewGameWRAM)
+01:5c31 (MomNamePrompt)
+01:5cf3 (MenuCallSettings)
+01:6223 (IntroCopyRightInfo)
+01:63d8 (ReanchorBGMap_NoOAMUpdate)
+01:67d5 (CorrectNickErrors)
+01:6810 (_Multiply)
+01:775a (_IsObjectCollisionTileSolid)
+01:776e (Function776e)
+01:77a1 (Function77a1)
+01:77ad (Function77ad)
+01:77dd (_CheckObjectCollision)
+01:7894 (_CheckPlayerObjectCollision)
+02:4000 (Function8000)
+02:4031 (Function8031)
+02:4047 (Function8047)
+02:406c (Function806c)
+02:407b (Function807b)
+02:4098 (_InitializeVisibleSprites)
+02:4125 (Function8125)
+02:4131 (Function8131)
+02:413d (Function813d)
+02:424c (Function824c)
+02:4261 (Function8261)
+02:433a (Function833a)
+02:43a2 (Function83a2)
+02:45df (QueueFollowerFirstStep)
+02:46cb (FlyMap)
+02:4aab (OpenTrainerGear)
+02:4d6e (TrainerGear_RadioJumptable)
+02:4eca (AnimateTrainerGearModeIndicatorPointer)
+02:51d2 (SetTitleBGDecorationBorder)
+02:55cc (Function95cc)
+02:55f8 (Function95f8)
+02:562d (LoadMagikarpPalettes_Intro)
+02:5633 (LoadForestPalettes2_Intro)
+02:5639 (LoadVenusaurPalettes_Intro)
+02:563f (LoadCharizardPalettes_Intro)
+02:5645 (Function9645)
+02:56eb (Function96eb)
+03:4000 (OverworldMovementCheck)
+03:477d (Functionc77d)
+03:4791 (LoadSpawnPoint)
+03:47b6 (IsSpawnPoint)
+03:49c1 (Functionc9c1)
+03:4c66 (GetBallByIndex)
+03:4d6f (HealParty)
+03:4fab (CutFunction)
+03:50d8 (SurfFunction)
+03:51af (FlyFunction)
+03:5260 (DigFunction)
+03:52db (TeleportFunction)
+03:53ad (_CheckTossableItem)
+03:53c3 (CheckItemPocket)
+03:53ce (CheckItemContext)
+03:53d9 (CheckItemMenu)
+03:540c (GetItemPrice)
+03:5d5c (Functiondd5c)
+03:5ecd (Functiondecd)
+03:60a0 (Function60a0)
+03:61d5 (_BillsPC)
+03:6734 (Function6734)
+03:7218 (Functionf218)
+03:7960 (Functionf960)
+03:7d46 (Functionfd46)
+03:7dab (Functionfdab)
+04:53f4 (NamingScreen)
+04:5665 (NamingScreenJoypadLoop.GetDPad)
+04:59eb (ComposeMailMessage)
+04:5d32 (Unknown11d32)
+04:5dbe (DisplayStartMenu)
+04:5f25 (_TrainerCard)
+04:5fc3 (GetPocket2Status)
+04:5fd3 (FlipPocket2Status)
+04:5fe2 (CheckItemsQuantity)
+04:5fee (DrawBackpack)
+04:6056 (DebugBackpackLoop)
+04:626e (TryTossItem)
+04:6343 (PrintCantUseText)
+04:638c (BallPocket)
+04:6418 (StartMenuLoadSprites)
+04:6c58 (CheckRegisteredItem)
+04:6d41 (TrainerCardLoop)
+05:400a (GetPlayerSprite)
+05:4036 (RefreshSprites)
+05:40d9 (Function140d9)
+05:40ea (Function140ea)
+05:40fb (LoadUsedSpritesGfx)
+05:4144
+05:43b6 (InitAllSRAMBanks)
+05:457a (Function1457a)
+05:45b8 (Function145b8)
+05:45de (Function145de)
+05:4624 (Function14624)
+05:477d (PokemonCenterPC)
+05:4cac (Function14cac)
+05:4dac (Function14dac)
+05:4dc4 (Function14dc4)
+05:4ddd (Function14ddd)
+05:4e00 (Function14e00)
+05:4e27 (Function14e27)
+05:4e4a (Function14e4a)
+05:4e5f (Function14e5f)
+09:412c (_ExitMenu)
+09:420b (Function2420b)
+09:43af (ScrollingMenu_ClearLeftColumn)
+09:45c5 (SwitchItemsInBag)
+09:4860 (asm_24860)
+09:4955 (Function24955)
+09:4aa9 (asm_24aa9)
+09:4b06 (asm_24b06)
+09:4c60 (SelectQuantityToToss)
+09:4c6a (asm_24c64)
+0a:4000 (Function28000)
+0a:533b
+0a:5a1f (Function29a1f)
+0a:5abf (Function29abf)
+0a:5cb7
+0b:4000 (ShowItemDescription)
+0b:52fc (Function2d2fc)
+0d:4000
+0d:401c
+0d:4ec9
+0d:4fff
+0d:51d0
+0d:585d
+0d:599d
+0d:60b1
+0d:65bf
+0d:7e1d
+0d:7e2d
+0d:7e3d (Function37e3d)
+0d:7e60
+0e:4000
+0e:4220
+0e:4340
+0e:434e
+0e:43cd
+0e:43fd
+0e:4431
+0e:44d4
+0e:4b78 (LoadTrainerClassName)
+0e:4ba9 (LoadTrainerClass)
+0e:4f45
+0e:50e9
+0f:475e
+0f:47b0
+0f:47d3
+0f:47f2
+0f:4808
+0f:4d6e
+0f:50a0
+0f:55ce (Function3d5ce)
+0f:5a1c
+0f:5aa7 (Function3daa7)
+0f:5f8b
+0f:6043 (AddPokemonToBox)
+0f:6247
+0f:62c6
+0f:6360
+0f:639f (Function3e39f)
+0f:63a7 (Function3e3a7)
+0f:65bf (Function3e5bf)
+0f:6928
+0f:696d
+0f:69a9 (_LoadWildMons)
+0f:69dc (Function3e9dc)
+0f:6e3e (Function3ee3e)
+0f:7003
+10:44d9
+10:45e9
+10:46c6
+10:4b07 (Function40b07)
+10:4b45 (Function40b45)
+10:4b5c (Function40b5c)
+10:5f93 (Function4af93)
+11:4000
+14:4628 (Function50628)
+14:469e (Function5069e)
+14:4756 (Function50756)
+14:487e (Function5087e)
+14:4c48
+14:4caa (Function50caa)
+14:4cd1 (Function50cd1)
+23:42dc (UpdateTimeOfDayPal)
+23:42e3 (_TimeOfDayPals)
+23:4325
+23:4335 (_UpdateTimePals)
+23:433e (OverworldFadeIn)
+23:4349 (OverworldFadeOut)
+23:4354 (ReplaceTimeOfDayPals)
+23:4b6d
+23:4cfd (InitEffectObject)
+23:4d0c (PlaySpriteAnimationsAndDelayFrame)
+23:4d13 (EffectObjectJumpNoDelay)
+23:4d24 (DoNextFrameForFirst16Sprites)
+23:70cc (Function8f0cc)
+23:70e3 (Function8f0e3)
+23:71cb (Function_8f1cb)
+23:71f2 (Function8f1f2)
+24:4000 (SetClockDialog)
+24:4239 (SlotMachineGame)
+24:4dca (Slots_AnimateGolem)
+24:4e56 (Slots_AnimateChansey)
+32:4000 (ExecuteBGEffects)
+32:401a (QueueBGEffect)
+33:4000 (Functioncc000)
+33:4001 (PlayBattleAnim)
+33:467b (QueueBattleAnimation)
+33:625d (BattleAnim_Sine_e)
+33:6263 (BattleAnim_Cosine_e)
+36:7ae4 (SetTime)
+38:4000 (PikachuMiniGame)
+38:4457 (MinigamePikachuDoMovement)
+38:4559 (CopyPikachuObjDataToTailObj)
+38:48a2 (PokerMinigame)
+38:5054
+38:5ae3 (FifteenPuzzleMinigame)
+38:622b (MemoryMinigame)
+38:6586 (MemoryGame_AnimateCursor)
+38:6886 (PicrossMinigame)
+39:4000 (GameFreakIntro)
+39:419e (GameFreakPresents_UpdateLogoPal)
+39:432f (OpeningCutscene)
+3a:4d9d (_PlayCryHeader)
+3a:4e4f
+3a:4ebd
+3e:40a0 (LoadPokeDexGraphics)
+3e:40fb (LoadPokemonStatsGraphics)
+3e:412e (LoadOnlyPokemonStatsGraphics)
+3e:413b (LoadBackpackGraphics)
+3f:40e9 (InGameDebugMenu)
+3f:4305 (FrameTypeDialog)
+3f:4e3e (Functionfce3e)
+3f:64ce (MonsterTest)
+3f:67a1 (CallSubGameMenu)
