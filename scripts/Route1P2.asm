@@ -25,7 +25,10 @@ Route1P2_TextPointers::
 	dw Route1P2Text2
 
 Route1P2Script::
-	ld a, [wYCoord]
+	ret
+	nop
+	nop
+	;ld a, [wYCoord]
 	cp $06
 	jr nz, .skipCheck
 	ld a, [wXCoord]

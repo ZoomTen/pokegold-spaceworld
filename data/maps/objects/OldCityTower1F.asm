@@ -20,7 +20,7 @@ OldCityTower1F_MapEvents::
 	def_object_events
 	object_event  0,  2, SPRITE_SAGE, STEP_DOWN, 0, 0, -1, -1, 0, 0, 0, 3, 0, 0
 	object_event  1,  5, SPRITE_SAGE, SLOW_STEP_LEFT, 0, 0, -1, -1, 0, 0, 0, 2, 0, 0
-	object_event  5,  1, SPRITE_SAGE, SLOW_STEP_UP, 0, 0, -1, -1, 0, 0, 0, 2, 0, 0
+	object_event 13, 13, SPRITE_SAGE, SLOW_STEP_UP, 0, 0, -1, -1, 0, 0, 0, 2, 0, 0
 	object_event  6,  4, SPRITE_SAGE, SLOW_STEP_RIGHT, 0, 0, -1, -1, 0, 0, 0, 4, 0, 0
 
 OldCityTower1F_Blocks::

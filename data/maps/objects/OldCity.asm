@@ -17,13 +17,13 @@ OldCity_MapEvents::
 	warp_event 11, 17, OLD_CITY_TOWER_1F, 1, 240
 	warp_event 12, 17, OLD_CITY_TOWER_1F, 2, 241
 	warp_event 30, 22, OLD_CITY_BILLS_HOUSE, 1, 328
-	warp_event  9, 26, OLD_CITY_MART, 1, 366
-	warp_event  4, 26, OLD_CITY_HOUSE, 1, 370
+	warp_event  7, 26, OLD_CITY_MART, 1, 366
+	warp_event  1, 26, OLD_CITY_HOUSE, 1, 370
 	warp_event 27, 28, OLD_CITY_POKECENTER_1F, 1, 404
 	warp_event  3, 31, OLD_CITY_KURTS_HOUSE, 1, 418
 	warp_event 18, 30, ROUTE_1_GATE_1F, 3, 426
 	warp_event 19, 30, ROUTE_1_GATE_1F, 4, 426
-	warp_event 18, 26, OLD_CITY_SCHOOL, 1, 376
+	warp_event 16, 26, OLD_CITY_SCHOOL, 1, 376
 
 	def_bg_events
 	bg_event  8, 14, 1
@@ -31,7 +31,7 @@ OldCity_MapEvents::
 	bg_event 28, 16, 3
 	bg_event 20, 22, 4
 	bg_event 26, 22, 5
-	bg_event 10, 26, 6
+	bg_event  8, 26, 6
 	bg_event 28, 28, 7
 	bg_event 20, 29, 8
 	bg_event  4, 32, 9
