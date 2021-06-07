@@ -696,19 +696,9 @@ PushSGBBorder:
 	ret
 
 .LoadSGBBorderPointers:
-	jp .alternate_border
-	bit 3, a
-	jr nz, .spaceworld_border
-
-.alternate_border
 ; load alternate border
 	ld hl, AlternateSGBBorderGFX
 	ld de, AlternateSGBBorderTilemap
-	ret
-
-.spaceworld_border
-	ld hl, SGBBorderGFX
-	ld de, SGBBorderTilemap
 	ret
 
 SGB_ClearVRAM:

@@ -44,19 +44,6 @@ INCLUDE "gfx/sgb/sgb_border_alt.pal"
 AlternateSGBBorderGFX::
 INCBIN "gfx/sgb/sgb_border_alt.2bpp"
 
-SGBBorderTilemap::
-INCBIN "gfx/sgb/sgb_border.sgb.tilemap"
-
-SGBBorderPalettes:
-INCLUDE "gfx/sgb/sgb_border.pal"
-
-SGBBorderGFX::
-if DEF(GOLD)
-INCBIN "gfx/sgb/sgb_border_gold.2bpp"
-else
-INCBIN "gfx/sgb/sgb_border_silver.2bpp"
-endc
-
 SECTION "gfx.asm@Shrink GFX", ROMX
 ShrinkPic1::
 INCBIN "gfx/player/shrink1.pic"
