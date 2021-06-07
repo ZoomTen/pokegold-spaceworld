@@ -183,15 +183,14 @@ UpdateSoundNTimes::
 	jr .loop
 
 FadeToMapMusic::
-	push hl
-	push de
-	push bc
+	jp PlayMapMusic
 	push af
 	call GetMapMusic
 	ld a, [wMapMusic]
-	cp e
-	jr z, .jump
-	ld a, 8
+	nop;cp e
+	nop;jr z, .jump
+	nop
+	ld a, 0
 	ld [wMusicFade], a
 	ld a, e
 	ld [wMusicFadeID], a
@@ -213,8 +212,9 @@ PlayMapMusic::
 	push af
 	call GetMapMusic
 	ld a, [wMapMusic]
-	cp e
-	jr z, .jump
+	nop;cp e
+	nop;jr z, .jump
+	nop
 	push de
 	ld de, MUSIC_NONE
 	call PlayMusic
