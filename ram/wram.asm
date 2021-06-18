@@ -1019,6 +1019,11 @@ NEXTU
 wHPBarMaxHP:: dw
 wHPBarOldHP:: dw
 
+NEXTU
+
+wEnemyEffectivenessVsPlayerMons:: db
+wPlayerEffectivenessVsEnemyMons:: db
+
 ENDU
 
 UNION
